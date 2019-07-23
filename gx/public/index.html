@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>廾匸</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<!-- 头 -->
+<header id="header">
+  <!-- 头部 -->
+  <div class="head">
+      <!-- 背景 -->
+      <div class="headbg"></div>
+      <!-- 中心logo 字体 -->
+      <div class="headcenter">
+        <!-- 图片 -->
+        <img src="img/gx_sm.jpg" class="logoimg">
+        <!-- 文字 -->
+        <div class="headtitle">
+          <p><span>Gōng </span><span>xǐ</span></p>
+          <p><span>廾</span><span>匸</span></p>
+        </div>
+      </div>
+  </div>
+  <!-- 大头像 -->
+  <div class="hidelogo">
+    <img src="img/gx_lg.jpg" style="width:400px;" class="lglogoimg">
+  </div>
+</header> 
+<main id="main">
+  <!-- 导航 -->
+  <div class="tabs">
+    <ul id="tab">
+      <li class="active"><a class="appzip taba">app下载</a></li>
+      <li><a class="playgame taba">休闲小游戏</a></li>
+      <li><a class="aboutme taba">关于我们</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="cont1">
+    </div>
+    <div id="cont2">
+    </div>
+    <div id="cont3">
+    </div>
+  </div>
+</main> 
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/index.js"></script>
+<script>
+  $("#tab li .taba").click(function(e){
+     //阻止事件默认行为
+     e.stopPropagation();
+            //给自己的爹+active           //给爹的所有兄弟去掉active 
+     $(this).parent().addClass("active").siblings().removeClass("active")
+  })
+  $(".appzip").click(function(e){
+    e.stopPropagation();
+    $("#cont1").show().siblings().hide()
+  })
+  $(".playgame").click(function(e){
+    e.stopPropagation();
+    $("#cont2").show().siblings().hide()
+  })
+  $(".aboutme").click(function(e){
+    e.stopPropagation();
+    $("#cont3").show().siblings().hide()
+  })
+</script>
+</body>
+</html>
